@@ -1,31 +1,35 @@
-# Simple Tailwind CSS Starter
+# 📿 Prayer Time Website
 
-This is an extremley simple setup to develop Tailwind projects. This will be used in my Tailwind From Scratch course.
+This is a web application that provides accurate **Islamic prayer times** based on the user's location. Users can search for prayer times in different cities, and the site automatically highlights the next upcoming prayer.
 
-## Usage
+🔗 **Live Demo:** (https://muslims-prayers.netlify.app/)
 
-Install dependencies
+## 🌟 Features
 
-```
-npm install
-```
+✅ **Auto Location Detection** – Fetches user’s location and displays prayer times.  
+✅ **City Search** – Allows users to search prayer times for any city.  
+✅ **Next Salah Timer** – Displays countdown until the next prayer.  
+✅ **Beautiful UI** – Simple, clean, and user-friendly interface.  
 
-Run Tailwind CLI in watch mode
+## 🛠️ Technologies Used
 
-```
-npm run dev
-```
+- **HTML, CSS, JavaScript** – Core frontend technologies  
+- **Tailwind CSS** – For styling  
+- **Aladhan API** – Fetches prayer times  
+- **OpenStreetMap API** – Retrieves location details  
 
-You can use tailwind classes in any .html files in the root directory
+## 🚀 How to Use
 
-Put any custom CSS that you may have in the **src/input.css** file
+1. Open the website.  
+2. It will automatically detect your location and show prayer times.  
+3. You can also search for another city to get its prayer times.  
+4. The site highlights the next upcoming prayer and shows a countdown.  
 
-Add any config values to the **tailwind.config.js** file
 
-To build once, run
+## 🛠️ Installation & Running Locally
 
-```
-npm run build
-```
+If you want to run the project locally:
 
-You only need to deploy your html files and css/style.css
+```sh
+git clone https://github.com/omarrr14/Prayers-Time.git
+cd Prayers-Time
