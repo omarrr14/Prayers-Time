@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <link rel="icon" href="./imgs/WhatsApp Image 2025-02-12 at 02.31.01_c3880dcd.jpg" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Prayer Time</title>
+    <link rel="stylesheet" href="font.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body class="bg-[#F2F8F6] font-Almarai">
+
+    <!-- start header -->
+        <header class="relative flex md:justify-center justify-start items-center ">
+          <img src="./imgs/Frame4.png" alt="">
+    
+          <div class="w-full md:w-1/2 flex-col md:flex-row absolute items-center md:items-start flex gap-1 md:gap-4 p-10">
+            <h3 class="font-bold text-sm md:text-lg mt-1 md:mt-0">أختر مدينتك</h3>
+            <form class="items-start md:flex md:gap-4">
+              <input type="text" placeholder="المدينة المنورة" id="cityInput" class="w-32 md:w-48 px-1 md:px-3 rounded-sm mb-2 border-none outline-none">
+              <button id="findCity" class="bg-[#1E6F50] px-3 rounded-sm text-white cursor-pointer">بحث</button>
+            </form>
+          </div>
+    
+        </header>
+    <!-- end header -->
+
+    <!-- Start Location -->
+      
+    <section class="w-full my-8 md:my-14">
+      <div class="container mx-auto px-6 md:px-4 flex flex-col md:flex-row gap-6 md:justify-between md:items-center">
+        <!-- First Box -->
+        <div class="flex flex-col justify-center space-y-5 h-44 w-full md:w-1/3 bg-white shadow-md p-6 rounded-lg text-center md:text-right">
+          <h2 class="font-extrabold text-2xl" id="country">الدولة : مصر</h2>
+          <h5 class="font-normal text-2xl" id="city">المدينة : القاهرة</h5>
+        </div>
+    
+        <!-- Second Box -->
+        <div class="flex items-center justify-between h-44 rounded-lg shadow-md bg-white w-full md:w-1/2 p-6">
+          <div class="flex flex-col items-center text-center space-y-3">
+            <h2 class="font-bold text-xl">بث مباشر</h2>
+            <h5 class="font-normal text-lg">إذاعة القرآن الكريم من القاهرة</h5>
+            <a href="https://surahquran.com/Radio-Quran-Cairo.html" target="_blank" 
+              class="bg-[#1E6F50] px-4 py-2 rounded-md text-white text-center">
+              انتقل للاستماع
+            </a>
+          </div>
+          <div class="w-28 h-28 md:w-32 md:h-32 flex-shrink-0">
+            <img src="./imgs/ezaa.png" alt="إذاعة القرآن" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <!-- End Location -->
+    
+    
+    <!-- Start prayers Time -->
+
+    <section class="w-full my-8 md:my-14">
+      <div class="container flex flex-col space-y-4 mx-auto bg-white min-h-[24rem] md:h-32 rounded-xl py-6 px-6 md:px-10">
+        <div class="w-full flex justify-between items-center">
+          <div>
+            <h3 class="text-2xl font-bold" id="nextSalah"></h3>
+          </div>
+          <div class="text-xl space-y-1">
+            <h4 id="higri"></h4>
+            <h4 id="normalDate"></h4>
+          </div>
+        </div>
+        
+        <div class="text-xl">
+          <p id="localTime">حسب التوقيت المحلي لمدينه القاهرة</p>
+        </div>
+    
+        <div class="text-xl font-bold">
+          <p id="currentTime"></p>
+        </div>
+    
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div class="bg-[#1E6F50] px-6 py-3 space-y-2 rounded-md text-white font-bold text-center">
+            <h3>الفجر</h3>
+            <p dir="ltr" id="fajr"></p>
+          </div>
+          <div class="bg-[#F2F8F6] px-6 py-3 space-y-2 rounded-md text-black font-bold text-center">
+            <h3>الشروق</h3>
+            <p dir="ltr" id="shrouq"></p>
+          </div>
+          <div class="bg-[#F2F8F6] px-6 py-3 space-y-2 rounded-md text-black font-bold text-center">
+            <h3>الظهر</h3>
+            <p dir="ltr" id="zohr"></p>
+          </div>
+          <div class="bg-[#F2F8F6] px-6 py-3 space-y-2 rounded-md text-black font-bold text-center">
+            <h3>العصر</h3>
+            <p dir="ltr" id="asr"></p>
+          </div>
+          <div class="bg-[#F2F8F6] px-6 py-3 space-y-2 rounded-md text-black font-bold text-center">
+            <h3>المغرب</h3>
+            <p dir="ltr" id="maghreb"></p>
+          </div>
+          <div class="bg-[#F2F8F6] px-6 py-3 space-y-2 rounded-md text-black font-bold text-center">
+            <h3>العشاء</h3>
+            <p dir="ltr" id="isha"></p>
+          </div>
+        </div>
+    
+        <div>
+          <a href="#" class="underline">الهيئة المصرية العامة للمساحة</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- End prayers Time -->
+
+    <!-- Start Timer  -->
+
+    <section class="w-full my-8 md:my-14">
+
+      <div class="container mx-auto flex flex-col md:flex-row md:items-center md:justify-around">
+
+        <div class="flex bg-[#FCD5CE] md:w-[576px] md:h-[215px] rounded-lg items-center mb-4 md:my-0 mx-1">
+          <img src="./imgs/Vector.png" alt="">
+          <div class="mr-5 flex flex-col items-center font-bold text-[#F66A51]">
+            <p class="my-5 text-lg md:text-3xl">المتبقي على خروج الوقت </p>
+            <h3 dir="ltr" id="timeLeft" class="text-lg md:text-3xl"></h3>
+          </div>
+        </div>
+        
+        <a href="https://prayertimes.news/imsakia-ramadan.html" target="_blank" class="flex justify-between items-center bg-[#B5EAD74D] md:w-[576px] md:h-[215px] rounded-lg mb-4 md:my-0 mx-1">
+          <p class="flex justify-center items-center w-full text-[#478570] md:text-2xl py-20 md:py-0 font-bold ">امساكية شهر رمضان المبارك لعام 1446</p>  
+        </a>
+      </div>
+    </section>
+
+    <!-- End Timer  -->
+
+    <!-- start Mosque finder -->
+    <div class="container mx-auto px-4 py-3 md:py-16">
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-xl p-5">
+          <div class="text-center mb-8">
+            <!-- Map Pin Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-emerald-600 mx-auto mb-4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              ابحث عن مسجد قريب
+            </h2>
+            <p class="text-gray-600">
+              انقر أدناه للعثور على المساجد القريبة من موقعك الحالي
+            </p>
+          </div>
+
+          <div id="error-message" class="mb-6 p-4 bg-red-50 text-red-700 rounded-lg hidden"></div>
+
+          <div class="flex justify-center">
+            <button
+              id="find-mosques-btn"
+              class="flex items-center justify-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition-colors disabled:opacity-70"
+            >
+              <span id="button-content">
+                البحث عن المساجد القريبة
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 inline" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          <div class="mt-8 text-center text-sm text-gray-500">
+            ملحوظة: يرجى التأكد من تمكين خدمات الموقع في متصفحك
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- End Mosque finder -->
+
+    <!-- Start Footer -->
+    <footer class="bg-[#478570] mt-auto text-white py-8">
+      <div class="container mx-auto px-4 py-8">
+          <div class="flex flex-col md:flex-row-reverse items-center justify-between">
+              <!-- Copyright Text -->
+              <div class="text-sm mb-4 md:mb-0 md:order-1 text-center">
+                <p>جميع الحقوق محفوظة © 2024</p>
+              </div>
+              <!-- Links -->
+              <div class="flex flex-row space-x-6 md:order-2 my-3 md:my-0 items-center">
+                  <a href="#" class="text-sm mx-3">
+                      الاحكام و الشروط
+                  </a>
+                  <a href="#" class=" text-sm mx-3">
+                      سياسة الخصوصية
+                  </a>
+                  <a href="#" class="text-sm mx-3 text-center">
+                      اتصل بنا
+                  </a>
+              </div>
+          </div>
+      </div>
+  </footer>
+    <!-- End Footer -->
+    <script src="map.js"></script>
+  </body>
+</html>
